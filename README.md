@@ -13,7 +13,7 @@ Durante o script, você será solicitado a instalar o PiHole e o Unbound (opçã
 Execute o seguinte comando no seu Pi para baixar o script:
 
 ```
-wget -O https://raw.githubusercontent.com/FG-telecom/Pi-Bound_PiHole_e_Unbound/master/pi-bound.sh
+wget -O pi-bound.sh https://raw.githubusercontent.com/FG-telecom/Pi-Bound_PiHole_e_Unbound/master/pi-bound.sh
 ```
 ```
 chmod +x pi-bound.sh
