@@ -54,9 +54,9 @@ configure() {
 	# Peça ao usuário o arquivo de configuração IPv4 ou IPv6 para unbound
 	read -p "Você quer resolver endereços IPv6 sem restrições? (Y/N)" network
 	if $network -eq "N" ; then
-		wget -O /etc/unbound/unbound.conf.d/pi-hole.conf https://raw.githubusercontent.com/kentishh/pihole_unbound/master/unbound-ipv4 
+		wget -O /etc/unbound/unbound.conf.d/pi-hole.conf https://raw.githubusercontent.com/FG-telecom/Pi-Bound_PiHole_e_Unbound/master/unbound-ipv4 
 	else
-		wget -O /etc/unbound/unbound.conf.d/pi-hole.conf https://raw.githubusercontent.com/kentishh/pihole_unbound/master/unbound-ipv6 
+		wget -O /etc/unbound/unbound.conf.d/pi-hole.conf https://raw.githubusercontent.com/FG-telecom/Pi-Bound_PiHole_e_Unbound/master/unbound-ipv6 
 	fi
 
 	# Iniciar e habilitar serviço unbound 
