@@ -1,22 +1,29 @@
-# Pi-Bound installs and configures PiHole and Unbound to be your network's recursive DNS server.
+# O Pi-Bound instala e configura o PiHole e o Unbound para serem o servidor DNS recursivo da sua rede.
 
-A simple script that installs PiHole, then automatically installs and configures Unbound to be your pihole's DNS server.
+Um script simples que instala o PiHole e, em seguida, instala e configura automaticamente o Unbound para ser o servidor DNS do seu pihole.
 
-This script supports IPv4 as well as IPv6, you will be prompted during the script for your required configuration.
+Este script suporta IPv4 e IPv6. Durante o script, você será solicitado a informar a configuração necessária.
 
-## What if I already have PiHole installed?
+## E se eu já tiver o PiHole instalado?
 
-You will be prompted during the script to either install PiHole and Unbound (option 1), or to just install Unbound along with required configuration (option 2).
+Durante o script, você será solicitado a instalar o PiHole e o Unbound (opção 1) ou apenas instalar o Unbound junto com a configuração necessária (opção 2).
 
-## How to run
+## Como executar
 
-Run the following command on your Pi to download the script:
+Execute o seguinte comando no seu Pi para baixar o script:
 
 ```
 wget -O pi-bound.sh https://raw.githubusercontent.com/kentishh/pihole_unbound/master/pi-bound.sh
 chmod +x pi-bound.sh
 sudo ./pi-bound.sh
 ```
-## Final steps
+## Etapas finais
 
-Some DNS checks are completed after the install which will be printed to the screen depending on if they came back successful or not. As long as these tests come back without any errors, you can then alter your DHCP settings to point to the IP of your PI. Otherwise, point your devices manually to use your Pi as your DNS server.
+Algumas verificações de DNS são concluídas após a instalação, que serão exibidas na tela dependendo se foram bem-sucedidas ou não. Desde que esses testes não apresentem erros, você pode alterar suas configurações de DHCP para apontar para o IP do seu PI. Caso contrário, aponte seus dispositivos manualmente para usar o seu PI como servidor DNS.
+
+
+
+## Créditos
+
+Todos os crédito vão pra o criador do projéto original 
+Kentishh https://github.com/kentishh.

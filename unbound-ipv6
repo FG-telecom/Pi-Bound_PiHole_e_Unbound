@@ -1,6 +1,6 @@
 server:
-    # If no logfile is specified, syslog is used
-    # logfile: "/var/log/unbound/unbound.log"
+    # Se nenhum arquivo de log for especificado, o syslog será usado
+    # arquivo de log: "/var/log/unbound/unbound.log"
     verbosity: 0
 
     interface: 127.0.0.1
@@ -9,41 +9,41 @@ server:
     do-udp: yes
     do-tcp: yes
 
-    # May be set to yes if you have IPv6 connectivity
+    # Pode ser definido como sim se você tiver conectividade IPv6
     do-ip6: yes 
 
-    # You want to leave this to no unless you have *native* IPv6. With 6to4 and
-    # Terredo tunnels your web browser should favor IPv4 for the same reasons
+    # Você quer deixar isso como "não", a menos que tenha IPv6 *nativo*. Com 6to4 e
+    # Túneis Terredo seu navegador web deve favorecer o IPv4 pelos mesmos motivos
     prefer-ip6: yes 
 
-    # Use this only when you downloaded the list of primary root servers!
+    # Use isto somente quando tiver baixado a lista de servidores raiz primários!
     root-hints: "/var/lib/unbound/root.hints"
 
-    # Trust glue only if it is within the server's authority
+    # Confie na cola somente se estiver dentro da autoridade do servidor
     harden-glue: yes
 
-    # Require DNSSEC data for trust-anchored zones, if such data is absent, the zone becomes BOGUS
+    # Exigir dados DNSSEC para zonas ancoradas em confiança; se tais dados estiverem ausentes, a zona se tornará BOGUS
     harden-dnssec-stripped: yes
 
-    # Don't use Capitalization randomization as it known to cause DNSSEC issues sometimes
-    # see https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378 for further details
+    # Não use randomização de capitalização, pois às vezes ela causa problemas de DNSSEC
+    # veja https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378 para mais detalhes
     use-caps-for-id: no
 
-    # Reduce EDNS reassembly buffer size.
-    # Suggested by the unbound man page to reduce fragmentation reassembly problems
+    # Reduz o tamanho do buffer de remontagem do EDNS.
+    # Sugerido pela página de manual unbound para reduzir problemas de remontagem de fragmentação
     edns-buffer-size: 1472
 
-    # Perform prefetching of close to expired message cache entries
-    # This only applies to domains that have been frequently queried
+    # Executar pré-busca de entradas de cache de mensagens quase expiradas
+    # Isso se aplica apenas a domínios que foram consultados com frequência
     prefetch: yes
 
-    # One thread should be sufficient, can be increased on beefy machines. In reality for most users running on small networks or on a single machine, it should be unnecessary to seek performance enhancement by increasing num-threads above 1.
+    # Uma thread deve ser suficiente e pode ser aumentada em máquinas mais potentes. Na realidade, para a maioria dos usuários que trabalham em redes pequenas ou em uma única máquina, não deve ser necessário buscar melhorias de desempenho aumentando o número de threads para mais de 1.
     num-threads: 1
 
-    # Ensure kernel buffer is large enough to not lose messages in traffic spikes
+    # Garanta que o buffer do kernel seja grande o suficiente para não perder mensagens em picos de tráfego
     so-rcvbuf: 1m
 
-    # Ensure privacy of local IP ranges
+    # Garantir a privacidade dos intervalos de IP locais
     private-address: 192.168.0.0/16
     private-address: 169.254.0.0/16
     private-address: 172.16.0.0/12
